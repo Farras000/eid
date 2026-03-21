@@ -9,9 +9,9 @@ const ALL_MEDIA = [
   'WhatsApp Image 2026-03-21 at 7.51.25 AM.jpeg',
   'WhatsApp Image 2026-03-21 at 7.53.25 AM(1).jpeg',
   'WhatsApp Image 2026-03-21 at 7.53.25 AM.jpeg',
-  'WhatsApp Video 2026-03-21 at 7.51.24 AM.mp4',
-  'WhatsApp Video 2026-03-21 at 7.51.25 AM.mp4',
-  'WhatsApp Video 2026-03-21 at 7.53.24 AM.mp4',
+  // 'WhatsApp Video 2026-03-21 at 7.51.24 AM.mp4',
+  // 'WhatsApp Video 2026-03-21 at 7.51.25 AM.mp4',
+  // 'WhatsApp Video 2026-03-21 at 7.53.24 AM.mp4',
 ];
 
 const CAPTIONS = [
