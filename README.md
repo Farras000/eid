@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+<div align="center">
+  <h1>🌙 Eid Mubarak Greeting Experience ✨</h1>
+  <p>An elegant, interactive Eid Mubarak web experience built with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Vite</strong>.</p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 💌 **Interactive Envelope**: A beautifully animated envelope that gracefully opens upon user interaction.
+- 🕌 **Majestic Greeting Card**: A warm, customized Eid Mubarak message designed with intricate Islamic aesthetics.
+- ✨ **Immersive Effects**: Gorgeous falling gold sparkles (particles) and a subtle arabesque background pattern.
+- 🎵 **Background Music**: An integrated, seamless ambient audio player to elevate the spiritual mood.
+- 📸 **Media Carousel**: A smooth, elegant carousel right beneath the greeting card to display cherished memories.
+- 🎨 **Curated Aesthetics**: A visually stunning color palette of deep green, radiant gold, and soft cream, paired with elegant typography.
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+Make sure you have [Bun](https://bun.sh/) installed on your machine (alternatively, npm or yarn works too!).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation & Setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository** (if you haven't already):
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+   ```bash
+   git clone <repository-url>
+   cd eid
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install the dependencies**:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   bun install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Start the development server**:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   bun run dev
+   ```
+
+4. **Experience the magic**:
+   Open `http://localhost:5173` in your browser to view the application!
+
+## 🛠️ Technology Stack
+
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: Pure CSS for smooth, lightweight custom animations.
+
+## 🎨 Customization Guide
+
+Want to make it your own? Here is how you can personalize the experience:
+
+- **Music & Media**: Replace the audio files in the `public/` directory (e.g., `videoplayback.m4a`) to change the background music.
+- **Messages**: Update your customized greeting text directly in `src/components/GreetingCard.tsx`.
+- **Carousel Images**: Modify the contents in `src/components/MediaCarousel.tsx` to showcase your own photos.
+
+---
+
+<div align="center">
+  <p><i>Taqabbalallahu minna wa minkum. May the blessings of Allah fill your life with happiness and open all the doors of success now and always.</i></p>
+</div>

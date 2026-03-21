@@ -4,6 +4,7 @@ import Envelope from './components/Envelope';
 import GreetingCard from './components/GreetingCard';
 import Particles from './components/Particles';
 import MusicPlayer from './components/MusicPlayer';
+import MediaCarousel from './components/MediaCarousel';
 import { useVisitorTracker } from './hooks/useVisitorTracker';
 
 type AppState = 'closed' | 'opening' | 'open';
@@ -33,7 +34,7 @@ function App() {
       <Particles />
 
       {/* Main content */}
-      <main className="main-content">
+      <main className={`main-content${state === 'open' ? ' main-content--open' : ''}`}>
         {state !== 'open' && (
           <div className="envelope-area">
             <Envelope isOpen={state === 'opening'} onClick={handleEnvelopeClick} />
@@ -41,9 +42,13 @@ function App() {
         )}
 
         {state === 'open' && (
-          <div className="card-area">
-            <GreetingCard />
-          </div>
+          <>
+            <div className="card-area">
+              <GreetingCard />
+            </div>
+            {/* Carousel flows directly below the card */}
+            <MediaCarousel />
+          </>
         )}
       </main>
 
