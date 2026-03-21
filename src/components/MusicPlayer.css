@@ -1,0 +1,126 @@
+/* ── Floating music button ── */
+.music-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #c9a84c;
+  background: rgba(26, 71, 49, 0.92);
+  color: #c9a84c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 0 rgba(201, 168, 76, 0);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  overflow: visible;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: rgba(26, 71, 49, 1);
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(201, 168, 76, 0.3);
+}
+
+.music-btn:active {
+  transform: scale(0.96);
+}
+
+/* Playing state — slight gold glow */
+.music-btn--playing {
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 16px rgba(201, 168, 76, 0.25);
+}
+
+.music-icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Ripple rings ── */
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 168, 76, 0.5);
+  animation: ripple 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+.ring-1 { animation-delay: 0s; }
+.ring-2 { animation-delay: 0.8s; }
+.ring-3 { animation-delay: 1.6s; }
+
+@keyframes ripple {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* ── Hint bubble ── */
+.music-hint {
+  position: fixed;
+  bottom: 4.8rem;
+  right: 1.5rem;
+  z-index: 100;
+  background: rgba(26, 71, 49, 0.95);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  color: #fdf6e3;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: hintFadeOut 4s ease forwards;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.music-hint::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background: rgba(26, 71, 49, 0.95);
+  border-right: 1px solid rgba(201, 168, 76, 0.5);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.5);
+  transform: rotate(45deg);
+}
+
+@keyframes hintFadeOut {
+  0%,  70% { opacity: 1; transform: translateY(0); }
+  100%      { opacity: 0; transform: translateY(6px); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .music-btn {
+    width: 46px;
+    height: 46px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .music-hint {
+    bottom: 4.2rem;
+    right: 1rem;
+    font-size: 0.72rem;
+  }
+}

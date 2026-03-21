@@ -1,0 +1,33 @@
+.particles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  top: -20px;
+  color: #c9a84c;
+  animation: fallDown linear infinite;
+  will-change: transform, opacity;
+  text-shadow: 0 0 6px rgba(201, 168, 76, 0.7);
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
